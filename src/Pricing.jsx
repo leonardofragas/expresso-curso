@@ -21,7 +21,7 @@ export default function Pricing() {
           <Row style={{ alignItems: 'center', width: '100%' }}>
             <Col>
               <h2>Turma 1</h2>
-              <h3>Pagamento em até 12x de 39,86 BRL.</h3>
+              <h3>Aceitamos pagamento em 2 cartões.</h3>
             </Col>
 
             <Col style={{ textAlign: 'right' }}>

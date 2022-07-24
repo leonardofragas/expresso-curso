@@ -61,7 +61,7 @@ function App() {
           <Container maxWidth="sm">
             <h1>gestão eficiente & criativa para o mercado digital.</h1>
             <h2>esteja preparado para a próxima revolução do marketing digital. aprenda a gerenciar campanhas, produtos e processos sendo um gestor de projeto criativo.</h2>
-            <a href="#">entrar agora</a>
+            <a href="#conteudo">entrar agora</a>
           </Container>
         </div>
       </div>
@@ -85,7 +85,7 @@ function App() {
       <div className="para-quem-e">
       </div>
 
-      <div className="conteudo-do-curso">
+      <div id="conteudo" className="conteudo-do-curso">
         <Container>
           <div className="content">
             <Row>
