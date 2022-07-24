@@ -1,0 +1,131 @@
+body 
+  margin 0
+  padding 0
+  box-sizing: border-box
+  font-family: 'Inter'
+
+h1 
+  color white
+  text-align center
+  padding 40px 0
+
+  @media screen and (max-width: 768px) {
+    padding 40 20px
+  }
+
+h2 
+  color white
+  font-weight 300
+  font-size 12px
+
+.responsive-video
+  
+  iframe 
+    width 100%
+    height 70vh
+    padding 40px 0
+
+    @media screen and (max-width: 768px) {
+      height 30vh
+    }
+
+.hero
+  min-height 100vh
+  width 100%
+  background-image: url('curso-hero-bg.png')
+  display flex
+  align-content center 
+  align-items center
+  text-align center
+  justify-content center
+  background-position right center
+  background-repeat no-repeat
+  background-size cover
+
+  .content
+
+    h2 
+      font-weight 300
+      font-size 12px
+      margin-bottom 40px
+
+    a 
+      color black
+      background #EBFF02
+      text-decoration none
+      padding 12px 26px
+      font-size 20px
+      border-radius 8px
+      margin-top 20px
+
+.vsl 
+  min-height 100vh
+  width 100%
+  background #12081E
+  display flex
+  align-content center 
+  align-items center
+  text-align center
+  justify-content center
+
+  h1, h2 
+    @media screen and (max-width: 768px) {
+      padding 2% 10%
+    }
+
+  .content
+
+    @media screen and (max-width: 768px) {
+      padding 2%
+    }
+
+.conteudo-do-curso
+  padding 40px 0
+  background #12081E
+
+  .col 
+
+    @media screen and (max-width: 768px) {
+      text-align center
+    }
+
+
+  .content 
+    padding 3%
+
+  img
+    transition 1s ease-in-out all
+    cursor pointer
+    margin-bottom 20px
+
+    &:hover 
+      transform scale(.98)
+
+    @media screen and (max-width: 768px) {
+      text-align center
+      align-self center
+    }
+
+.rodape-1
+  padding 40px
+  background url('rodape-fundo.png')
+  background-repeat no-repeat
+  background-size cover
+  color white
+
+  ul 
+    list-style none
+    margin 0
+    padding 0
+
+    a 
+      color white 
+      text-decoration none
+
+
+.rodape-2
+  border-top 2px rgba(255,255,255,0.2) solid
+  text-align center
+  padding 40px
+  background black
+  color rgba(255,255,255,0.5)

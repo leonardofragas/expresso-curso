@@ -1,0 +1,47 @@
+{
+  "checkout": {
+    "year": {
+        "price": "1500,00",
+        "url": "https://pay.kiwify.com.br/4L85Hrz"
+    }
+  },
+
+  "mainContent": [
+    {
+      "title": "curso expresso com 8 módulos"
+    }
+  ],
+
+  "oneYearOfSchool": [
+    {
+      "title": "1 ano de assinatura do olhar de vendas"
+    }
+  ],
+
+  "bonuses": [
+    {
+        "title": "modelos de entrega para copy, design, audiovisual e lançamentos"
+    }
+  ],
+
+  "masterclasses": [
+    {
+      "title": "direção de arte para lançamentos"
+    },
+    {
+      "title": "as 4 narrativas essenciais em copy"
+    }
+  ],
+
+  "extras": [
+    {
+      "title": "certificação através de prova escrita"
+    },
+    {
+      "title": "lives tira-dúvidas"
+    },
+    {
+      "title": "comunidade no facebook"
+    }
+  ]
+}
