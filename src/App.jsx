@@ -9,6 +9,8 @@ import Col from 'react-bootstrap/Col'
 
 import Pricing from './Pricing';
 
+import ProgressBar from 'react-bootstrap/ProgressBar';
+
 const courseModules = [
   {
     "img": "module-01.png",
@@ -52,7 +54,36 @@ const courseModules = [
 ]
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [vagasCount, setVagasCount] = useState(0)
+
+  const vagasTotais = 75
+
+  const baseUrl = 'https://leonardosouzafragas13560.api-us1.com/admin/api.php'
+  const formAction = 'list_list'
+  const apiOutput = 'json'
+  const ApiToken = 'd57382b6b6d2d6a83f447c5c4e54fd355eeee8cf5f7fcd89b6965a1b7f99263d7cb3182f'
+  const listIds = 10
+
+  const contactsRequest = `${baseUrl}?api_action=${formAction}&full=1&ids=${listIds}&api_key=${ApiToken}&api_output=${apiOutput}`
+
+  const options = {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+  }
+
+  let vagasPreenchidas = async () => {
+    const res = await fetch(contactsRequest, options)
+    const result = await res.json()
+    let bruteVagasResult = result[0].subscribers_active / vagasTotais 
+    let roundedVagasResult = bruteVagasResult.toFixed(2)
+    setVagasCount(roundedVagasResult * 100)
+    console.log(vagasCount)
+  }
+
+  vagasPreenchidas()
+  const now = vagasCount;
 
   return (
     <div className="App">
@@ -62,6 +93,8 @@ function App() {
             <h1>gestão eficiente & criativa para o mercado digital.</h1>
             <h2>esteja preparado para a próxima revolução do marketing digital. aprenda a gerenciar campanhas, produtos e processos sendo um gestor de projeto criativo.</h2>
             <a href="#conteudo">entrar agora</a>
+            <ProgressBar animated className="progressVagas" now={now} label={`${now}%`} />
+            <p>das vagas preenchidas</p>
           </Container>
         </div>
       </div>
