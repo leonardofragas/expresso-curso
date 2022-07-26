@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import * as React from 'react';
+import React, { useState, useEffect } from 'react';
+import ReactPixel from 'react-facebook-pixel'
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 
@@ -55,6 +55,23 @@ const courseModules = [
 
 function App() {
   const [vagasCount, setVagasCount] = useState(0)
+
+  const FacebookPixelCode = '244186400357051'
+
+  const FacebookPixelOptions = {
+    autoConfig: true,
+    debug: true,
+  }
+
+  let pixelCalled = false
+
+  useEffect(() => {
+    if (pixelCalled === false) {
+      ReactPixel.init(FacebookPixelCode, FacebookPixelOptions)
+      ReactPixel.pageView();
+      pixelCalled = true
+    }
+  }, []);
 
   const vagasTotais = 75
 
