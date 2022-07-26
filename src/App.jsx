@@ -1,59 +1,154 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'
 import ReactPixel from 'react-facebook-pixel'
-import ImageList from '@mui/material/ImageList';
-import ImageListItem from '@mui/material/ImageListItem';
 
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
+
 import Pricing from './Pricing';
 
-import ProgressBar from 'react-bootstrap/ProgressBar';
+import About from './Components/About/About'
+
+import ProgressBar from 'react-bootstrap/ProgressBar'
 
 const courseModules = [
   {
     "img": "module-01.png",
-    "title": "o que faz um gestor de projetos?"
+    "title": "o que faz um gestor de projetos?",
+    "duration": '30',
+    "items": [
+      'Guardião das demandas, processos e prazos',
+      'Como pensa um gestor de projetos',
+      'A entrega como objetivo máximo',
+      'No que eu acredito enquanto gestor?',
+      'Resumo do módulo'
+    ]
   },
 
   {
     "img": "module-02.png",
-    "title": "o que faz um gestor de projetos?"
+    "title": "como é a hierarquia de um projeto?",
+    "duration": '50',
+    "items": [
+      'Workspaces',
+      'Spaces',
+      'Folders',
+      'Lists',
+      'Tasks',
+      'Resumo do módulo'
+    ]
   },
 
   {
     "img": "module-03.png",
-    "title": "o que faz um gestor de projetos?"
+    "title": "em quais áreas se divide um projeto?",
+    "duration": '50',
+    "items": [
+      'Infraestrutura, Data & Automações',
+      'Design & Audiovisual',
+      'Copy & Briefing',
+      'Heads & Revisores',
+      'Estratégia & Direção de Arte',
+      'Resumo do módulo'
+    ]
   },
 
   {
     "img": "module-04.png",
-    "title": "o que faz um gestor de projetos?"
+    "title": "entendendo o sistema BPE",
+    "duration": '60',
+    "items": [
+      'Anatomia de um briefing',
+      'Anatomia de um pedido',
+      'Anatomia de uma entrega',
+      'Como trabalhar com sprints semanais',
+      'Como preparar o sprint da próxima semana',
+      'Organizando o seu backlog',
+      'Hierarquia de revisões e aprovações',
+      'Resumo do módulo'
+    ]
   },
 
   {
     "img": "module-05.png",
-    "title": "o que faz um gestor de projetos?"
+    "title": "processo para copy",
+    "duration": '40',
+    "items": [
+      'Argumento da peça',
+      'Roteiro técnico',
+      'Storyboard de referência',
+      'Resumo do módulo'
+    ]
   },
 
   {
     "img": "module-06.png",
-    "title": "o que faz um gestor de projetos?"
+    "title": "processo para design em geral",
+    "duration": '40',
+    "items": [
+      'Argumento da peça',
+      'Roteiro técnico',
+      'Storyboard de referência',
+      'Resumo do módulo'
+    ]
   },
 
   {
     "img": "module-07.png",
-    "title": "o que faz um gestor de projetos?"
+    "title": "processo para audiovisual",
+    "duration": '50',
+    "items": [
+      'Argumento de roteiro',
+      'Roteiro técnico',
+      'Storyboard de enquadramento',
+      'Storyboard de fotografia',
+      'Storyboard de lettering',
+      'Resumo do módulo'
+    ]
   },
 
   {
     "img": "module-08.png",
-    "title": "o que faz um gestor de projetos?"
+    "title": "gerindo um lançamento",
+    "duration": '40',
+    "items": [
+      'Entendendo o estrategista',
+      'Entendendo o tamanho da equipe',
+      'Quantificando as peças',
+      'Criando briefings de tudo',
+      'Consultando os heads de cada área'
+    ]
   }
 ]
 
 function App() {
+  const [show, setShow] = useState(false)
+  const [modalContent, setModalContent] = useState([])
+
+  const handleShow = (e) => {
+    e.preventDefault()
+
+    var searchedModule = courseModules.filter((obj) => {return obj.title.match(e.target.getAttribute('data-title'));})
+
+    const preparedModalContent = {
+      'title': searchedModule[0].title,
+      'items': searchedModule[0].items,
+      'duration': searchedModule[0].duration
+    }
+
+    setModalContent(preparedModalContent)
+
+    setShow(true)
+  }
+
+  const handleClose = (e) => {
+    console.log('im closing')
+    setShow(false)
+  }
+
   const [vagasCount, setVagasCount] = useState(0)
 
   const FacebookPixelCode = '244186400357051'
@@ -145,14 +240,38 @@ function App() {
             <Row>
               {courseModules.map((item) => (
                 <Col>
-                  <img
-                    src={`${item.img}`}
-                    srcSet={`${item.img}`}
-                    alt={item.title}
-                  />
+                  <a href="#" onClick={handleShow}>
+                    <img
+                      src={`${item.img}`}
+                      srcSet={`${item.img}`}
+                      alt={item.title}
+                      data-title={item.title}
+                      data-items={item.items}
+                    />
+                  </a>
                 </Col>
               ))}
             </Row>
+
+            <Modal show={show} onHide={handleClose} centered>
+              <Modal.Header closeButton>
+                <Modal.Title>{modalContent.title}</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                <p>
+                este módulo possui aproximadamente {modalContent.duration} minutos.
+                </p>
+                
+                <ul>
+                { modalContent.items ? modalContent.items.map((item, i) => (<li>{item}</li>)) : '' }
+                </ul>
+              </Modal.Body>
+              <Modal.Footer>
+                <Button variant="primary" onClick={handleClose}>
+                  fechar
+                </Button>
+              </Modal.Footer>
+            </Modal>
           </div>
         </Container>
       </div>
@@ -179,21 +298,9 @@ function App() {
 
       </div>
 
-      {/* <div className="rodape-1">
-        <Container>
-          <Row>
-            <Col>
-                
-            </Col>
-            <Col>
-              <ul>
-                <li><a href="#">Início</a></li>
-                <li><a href="mailto:fragas@escolaolhar.com">Suporte</a></li>
-              </ul>
-            </Col>
-          </Row>
-        </Container>
-      </div> */}
+      <div className="bio">
+        <About />
+      </div>
 
       <div className="rodape-2">
         <Container>
