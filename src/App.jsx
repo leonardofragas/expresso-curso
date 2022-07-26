@@ -285,7 +285,7 @@ function App() {
           <Row>
             <Col></Col>
             <Col md={2}>
-                <img src="/public/bonus-1.png" alt="Bônus 1" />
+                <img src="/bonus-1.png" alt="Bônus 1" />
             </Col>
 
             <Col md={6}>
@@ -299,7 +299,7 @@ function App() {
           <Row>
             <Col></Col>
             <Col md={2}>
-                <img src="/public/bonus-2.png" alt="Bônus 2" />
+                <img src="/bonus-2.png" alt="Bônus 2" />
             </Col>
 
             <Col md={6}>
@@ -313,7 +313,7 @@ function App() {
           <Row>
             <Col></Col>
             <Col md={2}>
-                <img src="/public/bonus-3.png" alt="Bônus 3" />
+                <img src="/bonus-3.png" alt="Bônus 3" />
             </Col>
 
             <Col md={6}>
@@ -327,7 +327,7 @@ function App() {
           <Row>
             <Col></Col>
             <Col md={2}>
-                <img src="/public/bonus-4.png" alt="Bônus 4" />
+                <img src="/bonus-4.png" alt="Bônus 4" />
             </Col>
 
             <Col md={6}>
@@ -341,7 +341,7 @@ function App() {
           <Row>
             <Col></Col>
             <Col md={2}>
-                <img src="/public/bonus-5.png" alt="Bônus 5" />
+                <img src="/bonus-5.png" alt="Bônus 5" />
             </Col>
 
             <Col md={6}>
@@ -355,7 +355,7 @@ function App() {
           <Row>
             <Col></Col>
             <Col md={2}>
-                <img src="/public/bonus-6.png" alt="Bônus 6" />
+                <img src="/bonus-6.png" alt="Bônus 6" />
             </Col>
 
             <Col md={6}>
@@ -369,7 +369,7 @@ function App() {
           <Row>
             <Col></Col>
             <Col md={2}>
-                <img src="/public/bonus-7.png" alt="Bônus 7" />
+                <img src="/bonus-7.png" alt="Bônus 7" />
             </Col>
 
             <Col md={6}>
@@ -383,7 +383,7 @@ function App() {
           <Row>
             <Col></Col>
             <Col md={2}>
-                <img src="/public/bonus-8.png" alt="Bônus 8" />
+                <img src="/bonus-8.png" alt="Bônus 8" />
             </Col>
 
             <Col md={6}>
