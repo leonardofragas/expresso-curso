@@ -261,7 +261,7 @@ function App() {
                 <p>
                 este módulo possui aproximadamente {modalContent.duration} minutos.
                 </p>
-                
+
                 <ul>
                 { modalContent.items ? modalContent.items.map((item, i) => (<li>{item}</li>)) : '' }
                 </ul>
@@ -273,6 +273,126 @@ function App() {
               </Modal.Footer>
             </Modal>
           </div>
+        </Container>
+      </div>
+
+      <div className="bonus">
+        <Container>
+          <Row>
+            <h1>e não para por aqui. veja todos os bônus que você vai receber.</h1>
+          </Row>
+
+          <Row>
+            <Col></Col>
+            <Col md={2}>
+                <img src="/public/bonus-1.png" alt="Bônus 1" />
+            </Col>
+
+            <Col md={6}>
+                <p>
+                é isso mesmo: você receberá 1 ano de assinatura do Olhar, a minha escola de marketing e vendas que já conta com mais de 30 profissionais criativos por todo o Brasil, incluindo grandes nomes dos bastidores do mercado digital. o preço original deste mesmo ano de assinatura é de R$397, mas você vai levar de graça.
+                </p>
+            </Col>
+            <Col></Col>
+          </Row>
+
+          <Row>
+            <Col></Col>
+            <Col md={2}>
+                <img src="/public/bonus-2.png" alt="Bônus 2" />
+            </Col>
+
+            <Col md={6}>
+                <p>
+                sim, estamos subindo o nível do mercado: você vai aprender na prática a criar narrativas visuais atrativas para o seu projeto de lançamento. para isso, vamos realizar ao vivo o processo de direção de arte de um futuro lançamento que será feito por aqui. essa masterclass será feita ao vivo no módulo 3.
+                </p>
+            </Col>
+            <Col></Col>
+          </Row>
+
+          <Row>
+            <Col></Col>
+            <Col md={2}>
+                <img src="/public/bonus-3.png" alt="Bônus 3" />
+            </Col>
+
+            <Col md={6}>
+                <p>
+                pela primeira vez, você vai ter acesso a uma masterclass integrando os conhecimentos das 4 narrativas que mudaram o panorama de copywriting do Brasil. essa masterclass será feita ao vivo no módulo 5.
+                </p>
+            </Col>
+            <Col></Col>
+          </Row>
+
+          <Row>
+            <Col></Col>
+            <Col md={2}>
+                <img src="/public/bonus-4.png" alt="Bônus 4" />
+            </Col>
+
+            <Col md={6}>
+                <p>
+                sendo sincero, com esses modelos de entrega seus processos nunca mais serão motivo de preocupação. você receberá modelos que foram validados e aplicados em negócios que faturam múltiplos 6 dígitos/ano.
+                </p>
+            </Col>
+            <Col></Col>
+          </Row>
+
+          <Row>
+            <Col></Col>
+            <Col md={2}>
+                <img src="/public/bonus-5.png" alt="Bônus 5" />
+            </Col>
+
+            <Col md={6}>
+                <p>
+                através de uma prova escrita no formato dissertativo, você estará certificado pelo curso expresso de gestão e estará apto a utilizar o sistema BPE com pleno domínio em qualquer negócio.
+                </p>
+            </Col>
+            <Col></Col>
+          </Row>
+
+          <Row>
+            <Col></Col>
+            <Col md={2}>
+                <img src="/public/bonus-6.png" alt="Bônus 6" />
+            </Col>
+
+            <Col md={6}>
+                <p>
+                teremos lives sempre que os alunos acharem necessário.
+                </p>
+            </Col>
+            <Col></Col>
+          </Row>
+
+          <Row>
+            <Col></Col>
+            <Col md={2}>
+                <img src="/public/bonus-7.png" alt="Bônus 7" />
+            </Col>
+
+            <Col md={6}>
+                <p>
+                para estar em contato com outros profissionais criativos.
+                </p>
+            </Col>
+            <Col></Col>
+          </Row>
+
+          <Row>
+            <Col></Col>
+            <Col md={2}>
+                <img src="/public/bonus-8.png" alt="Bônus 8" />
+            </Col>
+
+            <Col md={6}>
+                <p>
+                aula exclusiva revelando o debriefing dos processos de criação e execução do lançamento do curso expresso de gestão.
+                </p>
+            </Col>
+            <Col></Col>
+          </Row>
         </Container>
       </div>
 
@@ -294,9 +414,7 @@ function App() {
         </Container>
       </div>
 
-      <div className="bonus">
-
-      </div>
+      
 
       <div className="bio">
         <About />
