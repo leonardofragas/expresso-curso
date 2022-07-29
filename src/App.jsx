@@ -168,7 +168,7 @@ function App() {
     }
   }, []);
 
-  const vagasTotais = 75
+  const vagasTotais = 20
 
   const baseUrl = 'https://leonardosouzafragas13560.api-us1.com/admin/api.php'
   const formAction = 'list_list'
